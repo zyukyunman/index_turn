@@ -27,7 +27,9 @@ df_small['small_MA20'] = talib.MA(df_small['close'],momentum_days)
 # 计算N日的动量momentum
 df_big['big_MA20_mom'] = df_big['close'].pct_change(periods=momentum_days)
 df_small['small_MA20_mom'] = df_small['close'].pct_change(periods=momentum_days)
-# MACD
+# MACD 移动平均线趋同散度 移动平均收敛散度是通过从12个周期的EMA减去26个周期的指数移动平均值（EMA）来计算的。
+# 该计算的结果是MACD行。在该线的顶部绘制了称为“信号线”的移动平均线收敛发散线的9天EMA ，可以触发买入和卖出信号。
+# https://blog.mexo.io/macd/
 df_big['big_MACD'],df_big['big_MACDsignal'],df_big['big_MACDhist'] = talib.MACD(df_big['close'].values, fastperiod=12, slowperiod=26, signalperiod=9)
 df_small['small_MACD'],df_small['small_MACDsignal'],df_small['small_MACDhist'] = talib.MACD(df_small['close'].values, fastperiod=12, slowperiod=26, signalperiod=9)
 

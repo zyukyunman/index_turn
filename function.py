@@ -1,4 +1,13 @@
 import pandas as pd
+import talib
+import numpy as np
+
+def get_more_data(dataFrame,path):
+    #日线MA20、20日动量变化率、MACD三个指标参数
+    dataFrame['day_MA20'] = talib.MA(dataFrame['close'],20)
+    dataFrame['day_20_mompercent'] = dataFrame['close'].pct_change(periods=20)
+    dataFrame['day_MACD'],dataFrame['day_MACDsignal'],dataFrame['day_MACDhist'] = talib.MACD(dataFrame['close'].values, fastperiod=12, slowperiod=26, signalperiod=9)
+    return dataFrame
 
 def evaluate_investment(source_data, tittle,time='交易日期'):
     temp = source_data.copy()
