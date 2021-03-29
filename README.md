@@ -110,6 +110,7 @@
 * [backtrader](https://github.com/mementum/backtrader) - 实时交易、回测平台 
 
 ## 交易API
+* [聚宽](https://www.joinquant.com/) - **聚宽量化平台**
 * [上海期货信息技术有限公司CTP API](http://www.sfit.com.cn/5_2_DocumentDown.htm) - 期货交易所提供的API
 * [飞马快速交易平台 - 上海金融期货信息技术有限公司](http://www.cffexit.com.cn/static/3000201.html) - 飞马
 * [大连飞创信息技术有限公司](http://www.dfitc.com.cn/portal/cate?cid=1364967839100#1) - 飞创
